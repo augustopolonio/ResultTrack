@@ -1,27 +1,31 @@
 import { ChartLine } from "lucide-react"
 import InputCard from "./custom/input_card"
+import lavandaImg from "../assets/lavanda.png"
+import cravoImg from "../assets/cravo.png"
+import limaoImg from "../assets/limao.png"
+import eucaliptoImg from "../assets/eucalipto.png"
 
 export default function Home() {
 	const data = [
 		{
 			title: "Lavanda",
 			description: "Planta conhecida por suas propriedades tranquilizantes e aroma agradável.",
-			imageSrc: "src/assets/lavanda.png"
+			imageSrc: lavandaImg.src
 		},
 		{
 			title: "Cravo",
 			description: "Flor decorativa e aromática, também usada como tempero com propriedades medicinais.",
-			imageSrc: "src/assets/cravo.png"
+			imageSrc: cravoImg.src
 		},
 		{
 			title: "Limão",
 			description: "Fruta cítrica rica em vitamina C, amplamente utilizada em culinária e bebidas.",
-			imageSrc: "src/assets/limao.png"
+			imageSrc: limaoImg.src
 		},
 		{
 			title: "Eucalipto",
 			description: "Árvore cujas folhas são usadas para fins medicinais e aromaterapia devido ao seu óleo essencial.",
-			imageSrc: "src/assets/eucalipto.png"
+			imageSrc: eucaliptoImg.src
 		}
 ]
 
