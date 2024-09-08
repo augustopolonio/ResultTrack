@@ -11,5 +11,7 @@ export default defineConfig({
     react(), 
     tailwind({
     applyBaseStyles: false,
-  }),]
+  }),],
+  site: 'https://augustopolonio.github.io',
+  base: 'ResultTrack'
 });
