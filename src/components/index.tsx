@@ -6,22 +6,22 @@ export default function Home() {
 		{
 			title: "Lavanda",
 			description: "Planta conhecida por suas propriedades tranquilizantes e aroma agradável.",
-			imageSrc: "/lavanda.png"
+			imageSrc: "src/assets/lavanda.png"
 		},
 		{
 			title: "Cravo",
 			description: "Flor decorativa e aromática, também usada como tempero com propriedades medicinais.",
-			imageSrc: "/cravo.png"
+			imageSrc: "src/assets/cravo.png"
 		},
 		{
 			title: "Limão",
 			description: "Fruta cítrica rica em vitamina C, amplamente utilizada em culinária e bebidas.",
-			imageSrc: "/limao.png"
+			imageSrc: "src/assets/limao.png"
 		},
 		{
 			title: "Eucalipto",
 			description: "Árvore cujas folhas são usadas para fins medicinais e aromaterapia devido ao seu óleo essencial.",
-			imageSrc: "/eucalipto.png"
+			imageSrc: "src/assets/eucalipto.png"
 		}
 ]
 
