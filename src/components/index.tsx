@@ -5,7 +5,7 @@ export default function Home() {
 	const data = [
 		{
 			title: "Lavanda",
-			description: "Lavanda es una planta que se cultiva para la floración.",
+			description: "Planta conhecida por suas propriedades tranquilizantes e aroma agradável.",
 			imageSrc: "/lavanda.png"
 		},
 		{
@@ -36,6 +36,7 @@ export default function Home() {
 			<h1 className="text-xl font-semibold">
 				Olá, John Doe!
 			</h1>
+
 			{data.map((d, i) => <InputCard key={i} {...d} />)}
 		</main>
   )
