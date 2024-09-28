@@ -52,20 +52,21 @@ export default function InputCard( { title, description, imageSrc }: InputCardPr
   }
 
   return (
+    <Drawer>
+    <DrawerTrigger>
     <Card>
-      <CardHeader className="flex flex-row gap-4">        
-        <img src={imageSrc} alt="" width={80} className="rounded-md" />
-        <div className="flex flex-col gap-3">
-          <CardTitle className="text-xl">{title}</CardTitle>
-          <CardDescription>{description}</CardDescription>
-        </div>
-        <Drawer>
-          <DrawerTrigger>
-            <Button className="rounded-full h-10 w-10">
-              <Play />
-            </Button>
-          </DrawerTrigger>
-          <DrawerContent className="flex flex-col items-center">
+    <CardHeader className="flex flex-row text-left items-center gap-4">
+  <img src={imageSrc} alt="" width={80} className="rounded-md" />
+  <div className="flex flex-col gap-3">
+    <CardTitle className="text-xl">{title}</CardTitle>
+    <CardDescription>{description}</CardDescription>
+  </div>
+  <Play className="ml-auto" /> {/* Add ml-auto to push Play icon to the end */}
+</CardHeader>
+
+    </Card>
+    </DrawerTrigger>
+    <DrawerContent className="flex flex-col items-center">
             <img src={imageSrc} alt="" width={100} className="rounded-md" />
             <h1 className="text-2xl">{title}</h1>
             {/* <h3 className="text-sm pt-4">{description}</h3> */}
@@ -94,8 +95,5 @@ export default function InputCard( { title, description, imageSrc }: InputCardPr
           </DrawerFooter>
           </DrawerContent>
         </Drawer>
-
-      </CardHeader>
-    </Card>
   )
 }
