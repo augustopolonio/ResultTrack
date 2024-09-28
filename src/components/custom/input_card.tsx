@@ -66,7 +66,7 @@ export default function InputCard({
 							<CardTitle className="text-xl">{title}</CardTitle>
 							<CardDescription>{description}</CardDescription>
 						</div>
-						<Play className="ml-auto" />{" "}
+						<Play className="ml-auto" size={30} />{" "}
 						{/* Add ml-auto to push Play icon to the end */}
 					</CardHeader>
 				</Card>
