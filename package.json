@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "pnpm run open-browser && astro dev",
-    "open-browser": "start http://localhost:4321",
+    "open-browser": "start http://localhost:4321/ResultTrack",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
