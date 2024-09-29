@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '../styles/globals.css';
-import Home from "../components/index"
+import Layout from "../layouts/Layout.astro";
+import "../styles/globals.css";
+import Home from "../components/index";
 ---
 
 <Layout title="ResultTrack">
-	<Home client:load/>
+	<Home client:only/>
 </Layout>
