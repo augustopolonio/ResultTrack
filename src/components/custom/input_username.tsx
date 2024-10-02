@@ -4,13 +4,14 @@ import {
 	DialogDescription,
 	DialogHeader,
 	DialogTitle,
-	DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-export default function InputUsername({ setUsername }) {
+export default function InputUsername({
+	setUsername,
+}: { setUsername: (username: string) => void }) {
 	const [name, setName] = useState("");
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
