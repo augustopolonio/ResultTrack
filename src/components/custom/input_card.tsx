@@ -34,14 +34,14 @@ export default function InputCard({
 	description,
 	imageSrc,
 }: InputCardProps) {
-	const defaultTime = 5;
-	const [time, setTime] = useState(defaultTime);
+	const defaultTimeInSeconds = 15;
+	const [time, setTime] = useState(defaultTimeInSeconds);
 	const [isTimerRunning, setIsTimerRunning] = useState(false);
 	const [score, setScore] = useState(0);
 	const [notes, setNotes] = useState("");
 
 	const startTimer = () => {
-		setTime(defaultTime);
+		setTime(defaultTimeInSeconds);
 		setIsTimerRunning(true);
 		const timer = setInterval(() => {
 			setTime((time) => {
@@ -56,7 +56,7 @@ export default function InputCard({
 
 	const onSaveNote = () => {
 		setIsTimerRunning(false);
-		setTime(defaultTime);
+		setTime(defaultTimeInSeconds);
 
 		const storedLog = localStorage.getItem("log");
 		const logs = storedLog && JSON.parse(storedLog);
