@@ -21,6 +21,7 @@ import { Button } from "../ui/button";
 import { Play } from "lucide-react";
 import { useState } from "react";
 import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 interface InputCardProps {
 	title: string;
@@ -36,6 +37,8 @@ export default function InputCard({
 	const defaultTime = 5;
 	const [time, setTime] = useState(defaultTime);
 	const [isTimerRunning, setIsTimerRunning] = useState(false);
+	const [score, setScore] = useState(0);
+	const [notes, setNotes] = useState("");
 
 	const startTimer = () => {
 		setTime(defaultTime);
@@ -54,6 +57,21 @@ export default function InputCard({
 	const onSaveNote = () => {
 		setIsTimerRunning(false);
 		setTime(defaultTime);
+
+		const storedLog = localStorage.getItem("log");
+		const logs = storedLog && JSON.parse(storedLog);
+
+		const newLog = {
+			id: logs ? logs.length + 1 : 1,
+			title,
+			score,
+			notes,
+			createdAt: new Date(),
+		};
+		const updatedLogs = logs ? [...logs, newLog] : [newLog];
+
+		localStorage.setItem("log", JSON.stringify(updatedLogs));
+		console.log(localStorage.getItem("log"));
 	};
 
 	return (
@@ -75,7 +93,7 @@ export default function InputCard({
 				<img src={imageSrc} alt="" width={100} className="rounded-md" />
 				<h1 className="text-2xl">{title}</h1>
 				{/* <h3 className="text-sm pt-4">{description}</h3> */}
-				<DrawerHeader>
+				<DrawerHeader className="flex flex-col items-center">
 					{time === 0 ? (
 						<h1 className="text-3xl">Finalizado!</h1>
 					) : (
@@ -102,12 +120,19 @@ export default function InputCard({
 					{time > 0 ? (
 						""
 					) : (
-						<div className="flex flex-col gap-6 items-center">
+						<div className="flex flex-col gap-4 items-center">
 							<Input
 								placeholder="Nota"
-								className="w-20 h-10"
+								className="w-20 h-12"
 								type="number"
+								onChange={(e) => setScore(Number(e.target.value))}
+								min={0}
 								max={5}
+							/>
+							<Textarea
+								placeholder="Observações"
+								className="w-80"
+								onChange={(e) => setNotes(e.target.value)}
 							/>
 							<DrawerClose asChild>
 								<Button className="w-32 h-14" onClick={onSaveNote}>
