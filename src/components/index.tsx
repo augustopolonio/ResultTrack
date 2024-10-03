@@ -44,7 +44,9 @@ export default function Home() {
 						)}
 					</TabsContent>
 					<TabsContent value="statistics">
-						Change your password here.
+						Comming soon...
+						<br />
+						Your statistics will be shown here.
 					</TabsContent>
 
 					<TabsList className="flex justify-center h-15 fixed bottom-0 left-0 w-full">

@@ -30,8 +30,9 @@ export default function InputUsername({
 				<DialogHeader className="flex flex-col gap-2">
 					<DialogTitle>Welcome to ResultTrack (alpha v0.0.1)!</DialogTitle>
 					<DialogDescription>
-						The core idea of ResultTrack is to be a Smell Retraining Therapy
-						app, but could be used for anything.
+						The core idea of ResultTrack is to be a <br /> Smell Retraining
+						Therapy app. <br /> In this version there's is a template for you to
+						start.
 					</DialogDescription>
 					<Input
 						onChange={handleChange}

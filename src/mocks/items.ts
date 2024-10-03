@@ -6,30 +6,29 @@ import eucaliptoImg from "../assets/eucalipto.png";
 export const data = [
 	{
 		id: 1,
-		title: "Lavanda",
-		description:
-			"Planta conhecida por suas propriedades tranquilizantes e aroma agradável.",
+		title: "Lavender",
+		description: "Plant known for its calming properties and pleasant aroma.",
 		imageSrc: lavandaImg.src,
 	},
 	{
 		id: 2,
-		title: "Cravo",
+		title: "Clove",
 		description:
-			"Flor decorativa e aromática, também usada como tempero com propriedades medicinais.",
+			"Decorative and aromatic flower, also used as a seasoning with medicinal properties.",
 		imageSrc: cravoImg.src,
 	},
 	{
 		id: 3,
-		title: "Limão",
+		title: "Lemon",
 		description:
-			"Fruta cítrica rica em vitamina C, amplamente utilizada em culinária e bebidas.",
+			"Citrus fruit rich in vitamin C, widely used in cooking and beverages.",
 		imageSrc: limaoImg.src,
 	},
 	{
 		id: 4,
-		title: "Eucalipto",
+		title: "Eucalyptus",
 		description:
-			"Árvore cujas folhas são usadas para fins medicinais e aromaterapia devido ao seu óleo essencial.",
+			"Tree whose leaves are used for medicinal purposes and aromatherapy due to its essential oil.",
 		imageSrc: eucaliptoImg.src,
 	},
 ];

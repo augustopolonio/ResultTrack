@@ -16,10 +16,9 @@ import {
 	DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "../ui/button";
-import { Play } from "lucide-react";
 import { useState } from "react";
-import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
+import Rating from "./rating";
 
 interface InputCardProps {
 	title: string;
@@ -32,11 +31,13 @@ export default function InputCard({
 	description,
 	imageSrc,
 }: InputCardProps) {
-	const defaultTimeInSeconds = 15;
+	const defaultTimeInSeconds = 2; //15;
 	const [time, setTime] = useState(defaultTimeInSeconds);
 	const [isTimerRunning, setIsTimerRunning] = useState(false);
-	const [score, setScore] = useState(0);
+	// const [score, setScore] = useState(0);
+	const [rating, setRating] = useState(0);
 	const [notes, setNotes] = useState("");
+	const [isSaveDisabled, setIsSaveDisabled] = useState(true);
 
 	const startTimer = () => {
 		setTime(defaultTimeInSeconds);
@@ -62,7 +63,7 @@ export default function InputCard({
 		const newLog = {
 			id: logs ? logs.length + 1 : 1,
 			title,
-			score,
+			rating,
 			notes,
 			createdAt: new Date(),
 		};
@@ -82,18 +83,18 @@ export default function InputCard({
 							<CardTitle className="text-xl">{title}</CardTitle>
 							<CardDescription>{description}</CardDescription>
 						</div>
-						<Play className="ml-auto" size={30} />{" "}
+						{/* <Play className="ml-auto" size={30} />{" "} */}
 						{/* Add ml-auto to push Play icon to the end */}
 					</CardHeader>
 				</Card>
 			</DrawerTrigger>
-			<DrawerContent className="flex flex-col items-center">
+			<DrawerContent className="flex flex-col items-center h-[700px]">
 				<img src={imageSrc} alt="" width={100} className="rounded-md" />
 				<h1 className="text-2xl">{title}</h1>
 				{/* <h3 className="text-sm pt-4">{description}</h3> */}
 				<DrawerHeader className="flex flex-col items-center">
 					{time === 0 ? (
-						<h1 className="text-3xl">Finalizado!</h1>
+						""
 					) : (
 						<DrawerTitle className="text-6xl">
 							{Math.floor(time / 60)
@@ -103,7 +104,22 @@ export default function InputCard({
 						</DrawerTitle>
 					)}
 					<DrawerDescription>
-						{time === 0 ? "De 0 a 5, como foi sua experiência?" : ""}
+						{time === 0 ? (
+							<div className="flex flex-col gap-4 items-center">
+								<Rating
+									rating={rating}
+									setRating={setRating}
+									setIsSaveDisabled={setIsSaveDisabled}
+								/>
+								<Textarea
+									placeholder="Notes"
+									className="w-80"
+									onChange={(e) => setNotes(e.target.value)}
+								/>
+							</div>
+						) : (
+							""
+						)}
 					</DrawerDescription>
 				</DrawerHeader>
 				<DrawerFooter className="pb-16">
@@ -111,7 +127,7 @@ export default function InputCard({
 						""
 					) : (
 						<Button className="w-32 h-14" onClick={startTimer}>
-							Iniciar
+							Start
 						</Button>
 					)}
 
@@ -119,22 +135,13 @@ export default function InputCard({
 						""
 					) : (
 						<div className="flex flex-col gap-4 items-center">
-							<Input
-								placeholder="Nota"
-								className="w-20 h-12"
-								type="number"
-								onChange={(e) => setScore(Number(e.target.value))}
-								min={0}
-								max={5}
-							/>
-							<Textarea
-								placeholder="Observações"
-								className="w-80"
-								onChange={(e) => setNotes(e.target.value)}
-							/>
 							<DrawerClose asChild>
-								<Button className="w-32 h-14" onClick={onSaveNote}>
-									Salvar
+								<Button
+									className="w-32 h-14"
+									onClick={onSaveNote}
+									disabled={isSaveDisabled}
+								>
+									Save
 								</Button>
 							</DrawerClose>
 						</div>
