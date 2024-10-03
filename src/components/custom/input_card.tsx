@@ -59,12 +59,16 @@ export default function InputCard({
 
 		const storedLog = localStorage.getItem("log");
 		const logs = storedLog && JSON.parse(storedLog);
+		const hour = new Date().getHours();
+		const timeOfDay =
+			hour < 12 ? "morning" : hour < 18 ? "afternoon" : "evening";
 
 		const newLog = {
 			id: logs ? logs.length + 1 : 1,
 			title,
 			rating,
 			notes,
+			timeOfDay,
 			createdAt: new Date(),
 		};
 		const updatedLogs = logs ? [...logs, newLog] : [newLog];

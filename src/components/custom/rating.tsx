@@ -58,7 +58,7 @@ export default function Rating({
 			<p className="text-lg font-medium text-gray-700 text-center">
 				{rating
 					? `You rated your experience as ${emojiDescriptions[rating - 1]}`
-					: "Click an emoji to rate"}
+					: ""}
 			</p>
 		</div>
 	);

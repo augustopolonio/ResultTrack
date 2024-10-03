@@ -15,6 +15,15 @@ export default function Home() {
 	const [username, setUsername] = useState(
 		window.localStorage.getItem("username"),
 	);
+	const hour = new Date().getHours();
+
+	const getGreeting = () => {
+		return hour < 12
+			? "Good morning"
+			: hour < 18
+				? "Good afternoon"
+				: "Good evening";
+	};
 
 	return (
 		<main className="flex flex-col gap-2 p-4">
@@ -24,7 +33,9 @@ export default function Home() {
 			</div>
 
 			{username ? (
-				<h1 className="text-xl font-semibold">Olá, {username}!</h1>
+				<h1 className="text-xl font-semibold">
+					{getGreeting()}, {username.split(" ")[0]}!
+				</h1>
 			) : (
 				<InputUsername setUsername={setUsername} />
 			)}
