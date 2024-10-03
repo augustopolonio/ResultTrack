@@ -31,7 +31,7 @@ export default function InputCard({
 	description,
 	imageSrc,
 }: InputCardProps) {
-	const defaultTimeInSeconds = 2; //15;
+	const defaultTimeInSeconds = 15;
 	const [time, setTime] = useState(defaultTimeInSeconds);
 	const [isTimerRunning, setIsTimerRunning] = useState(false);
 	// const [score, setScore] = useState(0);

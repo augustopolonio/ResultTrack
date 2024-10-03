@@ -10,6 +10,7 @@ import { data } from "@/mocks/items";
 import { Button } from "./ui/button";
 import InputUsername from "./custom/input_username";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Statistics from "./custom/statistics";
 
 export default function Home() {
 	const [username, setUsername] = useState(
@@ -55,9 +56,7 @@ export default function Home() {
 						)}
 					</TabsContent>
 					<TabsContent value="statistics">
-						Comming soon...
-						<br />
-						Your statistics will be shown here.
+						<Statistics />
 					</TabsContent>
 
 					<TabsList className="flex justify-center h-15 fixed bottom-0 left-0 w-full">
