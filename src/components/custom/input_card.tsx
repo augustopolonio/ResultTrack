@@ -34,7 +34,6 @@ export default function InputCard({
 	const defaultTimeInSeconds = 15;
 	const [time, setTime] = useState(defaultTimeInSeconds);
 	const [isTimerRunning, setIsTimerRunning] = useState(false);
-	// const [score, setScore] = useState(0);
 	const [rating, setRating] = useState(0);
 	const [notes, setNotes] = useState("");
 	const [isSaveDisabled, setIsSaveDisabled] = useState(true);
