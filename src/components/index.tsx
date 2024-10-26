@@ -1,9 +1,4 @@
-import {
-	Bird,
-	ChartColumnDecreasingIcon,
-	ChartLine,
-	HomeIcon,
-} from "lucide-react";
+import { Bird, ChartColumnDecreasingIcon, HomeIcon } from "lucide-react";
 import InputCard from "./custom/input_card";
 import { useState } from "react";
 import { data } from "@/mocks/items";
