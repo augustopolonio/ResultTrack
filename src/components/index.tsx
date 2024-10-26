@@ -24,7 +24,7 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="h-5 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500" />
+			<div className="h-5 animated-background bg-gradient-to-r from-pink-500 via-violet-500 to-green-500 animate-gradient-x" />
 			<main className="flex flex-col gap-2 p-4">
 				<div className="flex items-center gap-2">
 					<img src={icon.src} alt="" width={30} height={30} />
